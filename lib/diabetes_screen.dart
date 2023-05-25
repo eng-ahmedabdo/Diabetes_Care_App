@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace, use_key_in_widget_constructors, must_be_immutable
 
+import 'package:diabetes_care/login_screen.dart';
 import 'package:flutter/material.dart';
 
 const activeColor = Color(0xFF736DD2);
@@ -30,13 +31,12 @@ class _DiabetesScreenState extends State<DiabetesScreen> {
           Padding(
             padding: const EdgeInsets.only(top: 90),
             child: Container(
-
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
                     child: Image(
-                      image: AssetImage('assets/diabetes.png') ,
+                      image: AssetImage('assets/diabetes.png'),
                       width: 340,
                       height: 240,
                     ),
@@ -59,11 +59,25 @@ class _DiabetesScreenState extends State<DiabetesScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       ContainerBox(
-                        onTap: (){},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => LoginScreen(),
+                            ),
+                          );
+                        },
                         text: "Prediabetic",
                       ),
                       ContainerBox(
-                        onTap: (){},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => LoginScreen(),
+                            ),
+                          );
+                        },
                         text: "Diabetic",
                       ),
                     ],
@@ -75,11 +89,25 @@ class _DiabetesScreenState extends State<DiabetesScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       ContainerBox(
-                        onTap: (){},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => LoginScreen(),
+                            ),
+                          );
+                        },
                         text: "I Don't Know",
                       ),
                       ContainerBox(
-                        onTap: (){},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => LoginScreen(),
+                            ),
+                          );
+                        },
                         text: "Gestational\n   Diabetes",
                       ),
                     ],
@@ -96,15 +124,14 @@ class _DiabetesScreenState extends State<DiabetesScreen> {
 
 class ContainerBox extends StatelessWidget {
   String? text;
-  Function? onTap;
-  ContainerBox({@required this.text , @required this.onTap});
+  VoidCallback? onTap;
+
+  ContainerBox({@required this.text, @required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        onTap;
-      },
+      onTap: onTap,
       child: Container(
         width: 130,
         height: 75,
@@ -121,8 +148,7 @@ class ContainerBox extends StatelessWidget {
                 blurRadius: 5.0,
                 offset: Offset(0, 6),
               ),
-            ]
-        ),
+            ]),
         child: Center(
           child: Text(
             text!,
