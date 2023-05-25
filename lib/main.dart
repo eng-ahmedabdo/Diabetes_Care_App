@@ -1,5 +1,7 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:diabetes_care/date_screen.dart';
+import 'package:diabetes_care/diabetes_screen.dart';
 import 'package:diabetes_care/login_screen.dart';
 import 'package:diabetes_care/symptoms_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Diabetes Care',
-      home: LoginScreen(),
+      home: DiabetesScreen(),
     );
   }
 }
